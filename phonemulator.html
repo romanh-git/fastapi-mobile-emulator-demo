@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mobile Assistant Emulator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="phone-emulator">
+        <div class="screen">
+            <header>
+                <h1>AI Mobile Assistant</h1>
+            </header>
+
+            <main class="content">
+                <!-- User Management Controls -->
+                <fieldset>
+                    <legend>User Management</legend>
+                    <div class="input-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" placeholder="Enter password">
+                    </div>
+                    <div class="button-group">
+                        <button onclick="registerUser()">Register</button>
+                        <button onclick="loginUser()">Login</button>
+                        <button onclick="getUserInfo()">Get User Info</button>
+                        <button onclick="updateUser()">Update Password</button>
+                    </div>
+                </fieldset>
+
+                <!-- LLM Interaction -->
+                <fieldset>
+                    <legend>AI Chat</legend>
+                     <div class="input-group">
+                         <label for="llm-prompt">Your Prompt:</label>
+                        <textarea id="llm-prompt" placeholder="Ask the assistant..." rows="4"></textarea>
+                    </div>
+                    <button onclick="sendLLMPrompt()">Ask LLM</button>
+                </fieldset>
+
+                <!-- User-Facing Response Area -->
+                <div class="response-area" id="user-response">
+                    <p><i>Status messages and LLM responses will appear here.</i></p>
+                </div>
+
+                <!-- Log Display Area -->
+                <div class="logs-container">
+                    <h3>API Interaction Logs (via WebSocket)</h3>
+                    <pre id="logDisplay">Connecting to WebSocket for logs...</pre>
+                </div>
+
+                <!-- Explanatory Text Sections -->
+                <section class="explanatory-text">
+                    <h2>Broader Concepts Showcase</h2>
+                    <details>
+                        <summary>Backend Architecture (FastAPI)</summary>
+                        <p>This demo uses FastAPI, a modern, fast Python web framework. Key features include automatic data validation (Pydantic), interactive API docs (Swagger UI/ReDoc), and asynchronous support (async/await), making it suitable for high-performance APIs.</p>
+                    </details>
+                    <details>
+                        <summary>Databases (Beyond In-Memory)</summary>
+                        <p>The user store here is a simple Python dictionary (in-memory), lost when the server restarts. Real applications use persistent databases like PostgreSQL (relational), MongoDB (NoSQL), or Redis (caching/key-value) with Object-Relational Mappers (ORMs) like SQLAlchemy or async ORMs like Tortoise ORM / SQLModel.</p>
+                    </details>
+                     <details>
+                        <summary>Authentication & Authorization (Beyond Simple Check)</summary>
+                        <p>Login here is basic. Production systems use robust methods like OAuth 2.0 (for third-party logins) or JWT (JSON Web Tokens) for session management. Passwords must always be securely hashed (e.g., using bcrypt or Argon2 via libraries like `passlib`). Authorization checks control what logged-in users can access.</p>
+                    </details>
+                    <details>
+                        <summary>LLM Integration & Frameworks</summary>
+                        <p>We proxy requests to Ollama. For complex LLM interactions (chaining prompts, using external tools, managing context), frameworks like LangChain or LlamaIndex are powerful. Fine-tuning models on specific data or using Retrieval-Augmented Generation (RAG) improves relevance.</p>
+                    </details>
+                     <details>
+                        <summary>Real-time Communication (WebSockets)</summary>
+                        <p>WebSockets provide full-duplex communication channels over a single TCP connection, ideal for real-time features like live logs (this demo), chat applications, or live data feeds. Alternatives include Server-Sent Events (SSE) for server-to-client streaming or gRPC for high-performance RPC.</p>
+                    </details>
+                     <details>
+                        <summary>DevOps & Deployment</summary>
+                        <p>This app runs locally. Production involves containerization (Docker), orchestration (Kubernetes), CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins) for automated testing and deployment, monitoring (Prometheus, Grafana), and logging aggregation (ELK stack, Datadog).</p>
+                    </details>
+                     <details>
+                        <summary>Security & Privacy</summary>
+                        <p>Beyond secure authentication, considerations include input validation (preventing injection), rate limiting, HTTPS enforcement, dependency scanning, handling sensitive data (PII) according to regulations (GDPR, CCPA), and regular security audits.</p>
+                    </details>
+                </section>
+            </main>
+
+            <footer>
+                <p>Emulator Footer</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

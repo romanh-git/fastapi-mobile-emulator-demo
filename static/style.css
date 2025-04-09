@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e0e0e0; /* Grey background outside the phone */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align phone to top */
+    min-height: 100vh;
+}
+
+.phone-emulator {
+    width: 375px; /* iPhone width */
+    height: 750px; /* Approximate height */
+    background-color: #1c1c1e; /* Dark grey phone body */
+    border-radius: 40px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+    background-color: #ffffff; /* White screen */
+    border-radius: 25px; /* Inner screen rounding */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Clip content to screen */
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.content {
+    padding: 15px;
+    overflow-y: auto; /* Allow content scrolling */
+    flex-grow: 1;
+}
+
+fieldset {
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+legend {
+    font-weight: bold;
+    color: #555;
+    padding: 0 5px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resize only */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-right: 5px;
+    margin-top: 5px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+     background-color: #004085;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+    gap: 5px; /* Spacing between buttons */
+}
+
+.response-area {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 40px;
+    font-size: 0.9em;
+}
+.response-area p {
+    margin: 0;
+}
+.response-area .success {
+    color: green;
+    font-weight: bold;
+}
+.response-area .error {
+    color: red;
+    font-weight: bold;
+}
+
+.logs-container {
+    margin-top: 20px;
+}
+
+.logs-container h3 {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+#logDisplay {
+    background-color: #282c34; /* Dark background for logs */
+    color: #abb2bf; /* Light grey text */
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 200px; /* Limit height */
+    overflow-y: auto; /* Enable scrolling */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8em;
+    white-space: pre-wrap; /* Wrap long lines */
+    word-break: break-all; /* Break long words/strings */
+    border: 1px solid #444;
+}
+
+.explanatory-text {
+    margin-top: 25px;
+    font-size: 0.9em;
+}
+.explanatory-text h2 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.explanatory-text details {
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+.explanatory-text summary {
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-radius: 4px 4px 0 0; /* Round top corners */
+}
+.explanatory-text details[open] summary {
+     border-bottom: 1px solid #eee;
+     border-radius: 4px 4px 0 0; /* Keep top corners rounded */
+}
+.explanatory-text p {
+    padding: 10px;
+    margin: 0;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px; /* Round bottom corners */
+    line-height: 1.4;
+}
+
+
+footer {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #888;
+    border-top: 1px solid #dcdcdc;
+    margin-top: auto; /* Pushes footer to bottom */
+}

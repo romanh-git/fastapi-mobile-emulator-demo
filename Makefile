@@ -5,14 +5,16 @@
 # Variables
 PYTHON := python3
 VENV_DIR := .venv
+# Вже визначено шлях до pip та uvicorn всередині venv
 PIP := $(VENV_DIR)/bin/pip
 UVICORN := $(VENV_DIR)/bin/uvicorn
-ACTIVATE := source $(VENV_DIR)/bin/activate
-# Handle Windows activation if needed (basic example)
-ifeq ($(OS),Windows_NT)
-    ACTIVATE = $(VENV_DIR)\\Scripts\\activate
-    PYTHON = python
-endif
+# ACTIVATE більше не потрібен для цих рецептів
+# ACTIVATE := source $(VENV_DIR)/bin/activate
+# # Handle Windows activation if needed (basic example)
+# ifeq ($(OS),Windows_NT)
+#     ACTIVATE = $(VENV_DIR)\\Scripts\\activate
+#     PYTHON = python
+# endif
 
 .PHONY: all help venv install run clean
 
@@ -41,7 +43,8 @@ venv: $(VENV_DIR)/touchfile
 # Target to install dependencies
 install: venv
 	@echo "Installing dependencies from requirements.txt..."
-	$(ACTIVATE) && $(PIP) install -r requirements.txt
+	# Викликаємо pip напряму з venv, без активації
+	$(PIP) install -r requirements.txt
 
 # Target to run the development server
 # Depends on install to ensure dependencies are met
@@ -51,7 +54,8 @@ run: install
 	@echo "Access Emulator: http://localhost:8000"
 	@echo "Access API Docs (Swagger): http://localhost:8000/docs"
 	@echo "Access API Docs (ReDoc): http://localhost:8000/redoc"
-	$(ACTIVATE) && $(UVICORN) main:app --reload --host 0.0.0.0 --port 8000
+	# Викликаємо uvicorn напряму з venv, без активації
+	$(UVICORN) main:app --reload --host 0.0.0.0 --port 8000
 
 # Target to clean up generated files
 clean:

@@ -28,6 +28,16 @@
     *   FastAPI автоматично генерує інтерактивну документацію API з вашого коду.
     *   **Swagger UI:** Доступний за адресою `/docs`. Дозволяє досліджувати та тестувати ендпоінти API безпосередньо у браузері.
     *   **ReDoc:** Доступний за адресою `/redoc`. Надає альтернативний вигляд документації.
+
+      
+<p align="center"> <!-- Optional: Centers the images -->
+  <img src="demo1.png" alt="Description for image 1" width="45%">
+    <!-- Optional: Adds a small space between images -->
+  <img src="demo2.png" alt="Description for image 2" width="45%">
+</p>
+
+    
+
 *   **Фронтенд-емулятор мобільного:**
     *   Простий інтерфейс, що роздається з `/` і нагадує екран телефону.
     *   Елементи керування для управління користувачами та взаємодії з LLM.

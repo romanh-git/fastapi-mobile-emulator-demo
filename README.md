@@ -28,6 +28,13 @@ The primary goals are to showcase:
     *   FastAPI automatically generates interactive API documentation from your code.
     *   **Swagger UI:** Available at `/docs`. Allows you to explore and test the API endpoints directly in your browser.
     *   **ReDoc:** Available at `/redoc`. Provides an alternative documentation view.
+
+<p align="center"> <!-- Optional: Centers the images -->
+  <img src="demo1.png" alt="Description for image 1" width="45%">
+    <!-- Optional: Adds a small space between images -->
+  <img src="demo2.png" alt="Description for image 2" width="45%">
+</p>
+
 *   **Mobile Emulator Frontend:**
     *   Simple interface served at `/` resembling a phone screen.
     *   Controls for user management and LLM interaction.

@@ -122,7 +122,7 @@ The primary goals are to showcase:
 ├── requirements.txt    # Python dependencies
 ├── Makefile            # Convenience commands for development
 └── README.md           # This file
-
+```
 
 ## Notes & Limitations
 
@@ -130,3 +130,15 @@ The primary goals are to showcase:
 *   **Basic Authentication:** Login is a simple password check. No proper session management (like JWT) or password hashing is implemented.
 *   **Error Handling:** Basic error handling is included, but could be more robust for production scenarios.
 *   **Ollama Dependency:** The application requires a running Ollama instance configured as specified.
+
+## AI Assistance Acknowledgement
+
+Significant portions of the code and documentation in this project (including file structures, function logic, this README) were generated with the assistance of large language models (e.g., Google Gemini).
+
+AI was used as a tool for:
+*   Generating initial code based on prompts.
+*   Assisting with boilerplate code writing.
+*   Providing suggestions for logic and implementation.
+*   Generating documentation drafts.
+
+All AI-generated code was reviewed, tested, and modified by the developer.

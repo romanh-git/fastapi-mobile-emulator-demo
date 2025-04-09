@@ -1,6 +1,7 @@
 # Віртуальне оточення
 .venv/
-
+venv/
+.vscode/
 # Кеш Python
 __pycache__/
 *.pyc
